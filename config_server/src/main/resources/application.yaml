@@ -1,0 +1,54 @@
+spring:
+   application:
+     name: config-server
+   profiles:
+     active: localhost
+     
+
+info:
+   component: Config Server
+
+---
+
+spring:
+  profiles: localhost
+  cloud:
+    config:
+      server:
+        git:
+          uri: https://github.com/melek227/Stockmanagement_config.git
+          
+logging:
+  level:
+    root: debug
+    
+server:
+    port: 8888
+    
+    
+---
+
+spring:
+  profiles: stage
+  cloud:
+    config:
+      server:
+        git:
+          uri: https://github.com/melek227/Stockmanagement_config.git
+          
+logging:
+  level:
+    root: debug
+    
+server:
+    port: 8888
+    
+
+
+
+
+
+
+
+
+
